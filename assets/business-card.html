@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Card – Rahima Athari | Steadfast Workforce LLC</title>
+<style>
+  /* ── Print setup: business card = 3.5" × 2" ─────────────────────────── */
+  @page { size: 3.5in 2in; margin: 0; }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ddd;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 32px;
+    min-height: 100vh;
+    align-items: flex-start;
+  }
+
+  /* ── Card container: 3.5 × 2 inch at 96dpi = 336 × 192px ────────────── */
+  .card {
+    width: 3.5in;
+    height: 2in;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.28);
+    page-break-after: always;
+    flex-shrink: 0;
+  }
+
+  /* ══════════════════════════════════════════
+     FRONT – dark teal background
+  ══════════════════════════════════════════ */
+  .front {
+    background: #0B3B3E;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  /* Top section: logo mark + name block */
+  .front-top {
+    padding: 18px 20px 10px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  /* Logo mark (3 bars) */
+  .bars {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding-top: 3px;
+    flex-shrink: 0;
+  }
+  .b1 { width: 22px; height: 5px; background: #FFFFFF;   border-radius: 1px; }
+  .b2 { width: 29px; height: 5px; background: #E8F5F5;   border-radius: 1px; }
+  .b3 { width: 36px; height: 6px; background: #D9943A;   border-radius: 1px; }
+
+  /* Name & title */
+  .name-block { flex: 1; }
+  .company-name {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+  .company-sub {
+    font-size: 6.5px;
+    letter-spacing: 1.8px;
+    color: #E8F5F5;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  /* Amber divider line */
+  .amber-line {
+    height: 2.5px;
+    background: #D9943A;
+    margin: 0 20px;
+  }
+
+  /* Person name & title */
+  .person-block {
+    padding: 10px 20px 0 20px;
+  }
+  .person-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: .4px;
+  }
+  .person-title {
+    font-size: 7.5px;
+    color: #E8F5F5;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  /* Contact bottom */
+  .front-bottom {
+    padding: 0 20px 14px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .contact-line {
+    font-size: 7px;
+    color: #E8F5F5;
+    letter-spacing: .4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .contact-line .dot {
+    width: 3px;
+    height: 3px;
+    background: #D9943A;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* Tagline strip at very bottom */
+  .tagline-strip {
+    background: #174E52;
+    padding: 4px 20px;
+    font-size: 6px;
+    color: #E8F5F5;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+  }
+
+  /* ══════════════════════════════════════════
+     BACK – frost background, minimal
+  ══════════════════════════════════════════ */
+  .back {
+    background: #F2FAF9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+
+  /* Large bars mark centered */
+  .back-bars {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 14px;
+  }
+  .back-b1 { width: 44px; height: 9px;  background: #0B3B3E; border-radius: 2px; }
+  .back-b2 { width: 58px; height: 9px;  background: #1C8589; border-radius: 2px; }
+  .back-b3 { width: 72px; height: 11px; background: #D9943A; border-radius: 2px; }
+
+  .back-name {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #0B3B3E;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .back-sub {
+    font-size: 6.5px;
+    letter-spacing: 2.5px;
+    color: #1C8589;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 3px;
+  }
+
+  /* ── Screen preview labels ───────────────────────────────────────────── */
+  @media screen {
+    .label {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      color: #555;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .card-wrapper { display: flex; flex-direction: column; }
+    .print-note {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      color: #666;
+      margin-top: 32px;
+      max-width: 500px;
+      line-height: 1.5;
+      padding: 14px 18px;
+      background: #fff;
+      border-radius: 4px;
+      border-left: 3px solid #1C8589;
+    }
+  }
+
+  @media print {
+    body { background: white; padding: 0; gap: 0; }
+    .label, .print-note { display: none; }
+    .card-wrapper { display: contents; }
+    .card { border-radius: 0; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- FRONT -->
+<div class="card-wrapper">
+  <div class="label">Front</div>
+  <div class="card front">
+    <!-- Top: bars + company name -->
+    <div class="front-top">
+      <div class="bars">
+        <div class="b1"></div>
+        <div class="b2"></div>
+        <div class="b3"></div>
+      </div>
+      <div class="name-block">
+        <div class="company-name">STEADFAST WORKFORCE</div>
+        <div class="company-sub">LLC</div>
+      </div>
+    </div>
+
+    <!-- Amber line -->
+    <div class="amber-line"></div>
+
+    <!-- Person -->
+    <div class="person-block">
+      <div class="person-name">Rahima Athari</div>
+      <div class="person-title">Managing Member</div>
+    </div>
+
+    <!-- Contact info -->
+    <div class="front-bottom">
+      <div class="contact-line"><span class="dot"></span>(310) 869-2080</div>
+      <div class="contact-line"><span class="dot"></span>rahimablaza12@gmail.com</div>
+      <div class="contact-line"><span class="dot"></span>steadfastworkforce.com</div>
+    </div>
+
+    <!-- Tagline -->
+    <div class="tagline-strip">Strength in Every Shift</div>
+  </div>
+</div>
+
+<!-- BACK -->
+<div class="card-wrapper">
+  <div class="label">Back</div>
+  <div class="card back">
+    <div class="back-bars">
+      <div class="back-b1"></div>
+      <div class="back-b2"></div>
+      <div class="back-b3"></div>
+    </div>
+    <div class="back-name">Steadfast Workforce</div>
+    <div class="back-sub">LLC  ·  Strength in Every Shift</div>
+  </div>
+</div>
+
+<!-- Print instructions -->
+<div class="print-note">
+  <strong>Printing Instructions</strong><br>
+  Open in Chrome → File → Print → Set paper size to <em>3.5 × 2 inches</em> (or print on Letter and cut).
+  Set margins to <em>None</em>. Scale: <em>100%</em>.<br><br>
+  For professional printing: export each card as PDF and send to your printer with bleed marks.
+  Recommended: 14pt silk or matte card stock.
+</div>
+
+</body>
+</html>
