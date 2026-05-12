@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 100" width="420" height="100">
+  <!-- Logo mark: 3 horizontal bars (on dark/teal background) -->
+  <!-- Bar 1 – narrowest, White -->
+  <rect x="0" y="14" width="44" height="12" fill="#FFFFFF" rx="1"/>
+  <!-- Bar 2 – mid, Near-White -->
+  <rect x="0" y="32" width="58" height="12" fill="#E8F5F5" rx="1"/>
+  <!-- Bar 3 – widest, Amber (always amber) -->
+  <rect x="0" y="50" width="72" height="14" fill="#D9943A" rx="1"/>
+
+  <!-- Company name -->
+  <text x="88" y="42" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="2" fill="#FFFFFF">STEADFAST WORKFORCE</text>
+  <text x="88" y="60" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" letter-spacing="3" fill="#E8F5F5">LLC  ·  STRENGTH IN EVERY SHIFT</text>
+</svg>
